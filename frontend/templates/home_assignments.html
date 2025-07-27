@@ -161,7 +161,7 @@
           </h4>
           <p class="text-sm">📅 Uploaded: <span class="text-gray-300">{{ latest_assignment.uploaded_at|date:"d M, Y" }}</span></p>
           <p class="mt-1 italic text-sm">📝 Theory Assignment</p>
-          <a href="{{ latest_assignment.theory_pdf.url }}" target="_blank" class="block mt-2 text-blue-300 hover:underline">📥 Download</a>
+          <a href="{{ latest_assignment.theory_pdf.url }}" target="_blank" class="block mt-2 text-blue-300 hover:underline">📥 View Assignment</a>
         </div>
       {% endif %}
 
@@ -173,7 +173,7 @@
           </h4>
           <p class="text-sm">📅 Uploaded: <span class="text-gray-300">{{ latest_assignment.uploaded_at|date:"d M, Y" }}</span></p>
           <p class="mt-1 italic text-sm">📝 Practical Assignment</p>
-          <a href="{{ latest_assignment.practical_pdf.url }}" target="_blank" class="block mt-2 text-blue-300 hover:underline">📥 Download</a>
+          <a href="{{ latest_assignment.practical_pdf.url }}" target="_blank" class="block mt-2 text-blue-300 hover:underline">📥 View Assignment</a>
         </div>
       {% endif %}
     </div>
