@@ -127,8 +127,9 @@ def upload_syllabus(request):
 
 # wkhtmltopdf चा path set कर
 # path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'  # Make sure 'bin' path is added
-# config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-config = pdfkit.configuration(wkhtmltopdf=r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe')
+# config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
+path_wkhtmltopdf =r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
 pdfkit.from_string("Hello World", "out.pdf", configuration=config)
 
 @csrf_exempt
