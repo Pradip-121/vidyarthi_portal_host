@@ -19,6 +19,7 @@ from pylatex import Document, NoEscape
 from django.template.loader import render_to_string
 import pdfkit
 from django.views.decorators.csrf import csrf_exempt
+import platform
 
 
 # for admin panel 
@@ -128,7 +129,10 @@ def upload_syllabus(request):
 # wkhtmltopdf चा path set कर
 # path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'  # Make sure 'bin' path is added
 # config = pdfkit.configuration(wkhtmltopdf='/usr/bin/wkhtmltopdf')
-path_wkhtmltopdf =r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+if platform.system() == "Windows":
+    path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+else:
+    path_wkhtmltopdf = '/usr/bin/wkhtmltopdf'
 config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
 pdfkit.from_string("Hello World", "out.pdf", configuration=config)
 
